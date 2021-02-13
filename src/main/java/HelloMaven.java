@@ -1,4 +1,5 @@
 
+import com.github.javafaker.Faker;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Scanner;
@@ -6,6 +7,7 @@ import java.util.Scanner;
 public class HelloMaven {
     public static void main(String[] args) {
 
+        Faker faker = new Faker();
         Scanner in = new Scanner(System.in);
         System.out.println("Enter a String.");
         String input = in.nextLine().trim();
@@ -13,7 +15,7 @@ public class HelloMaven {
         if (StringUtils.isNumeric(input)) {System.out.println(input + " is a number");} else {System.out.println((input + " is not a number."));}
         System.out.println("Flipped case for your input is: " + StringUtils.swapCase(input));
         System.out.println("Reversed: " + StringUtils.reverse(input));
-
+        System.out.println(faker.address().fullAddress());
 
     }
 }
